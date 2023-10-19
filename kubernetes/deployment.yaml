@@ -3,13 +3,12 @@ kind: Service
 metadata:
   name: front-end-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: front-end
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30008
 ---
 apiVersion: apps/v1
 kind: Deployment
