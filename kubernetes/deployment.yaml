@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: front-end-service
 spec:
-  type: LoadBalancer
   selector:
     app: front-end
   ports:
-    - port: 80
+    - port: 4200
       targetPort: 80
 ---
 apiVersion: apps/v1
@@ -17,7 +16,7 @@ metadata:
   labels:
     app: front-end
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: front-end
